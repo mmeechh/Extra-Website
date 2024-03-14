@@ -37,7 +37,7 @@ body {
 }
 
 .gradient-text {
-    background: radial-gradient(circle, #de0000, #ff3333, #f00000);
+    background: radial-gradient(circle, #006fde, #006fde, #f00000);
     padding: 5px;
     border-radius: 5px;
     background-clip: text;
