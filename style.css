@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #081b29;
+    background: #000000;
     color: #ededed;
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -77,9 +77,10 @@ body {
 }
 
 .subheading {
-    color: #f00000;
+    color: #ffffff;
     font-style: italic;
     margin-bottom: 20px;
+    font-weight: 650;
 }
 
 .about p {
@@ -91,6 +92,11 @@ body {
 .counter {
     text-align: center;
     padding: 20px 0;
+}
+
+.staff-text {
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 @media only screen and (min-width: 768px) {
