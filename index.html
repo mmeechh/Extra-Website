@@ -1,48 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <link rel="icon" href="portfolio.png">
-    <link rel="stylesheet" href="index.css">
-    <title>Meech's Portfolio</title>
+    <link rel="stylesheet" href="login.css"> <!-- Link to your CSS file -->
+    <!-- Google Sign-In script -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 </head>
-    
 <body>
-
     <div class="container">
-        <div class="glass-container">
-            <nav class="navbar">
-                <div class="logo"><a href="#">Meech.</a></div>
-                <ul class="nav-links">
-                    <li class="nav-link"><a href="#">Home</a></li>
-                    <li class="nav-link"><a href="https://discord.gg/evoroleplay">Discord</a></li>
-                    <li class="nav-link"><a href="login.html">Log In</a></li>
-                </ul>
-            </nav>
-            <div class="content">
-                <div class="main">
-                    <h2>Hey! 👋,<br>It's Meech</h2>
-                    <p>
-                        Hola, my name is Meech Im a developer for Fivem. Join my Dicord!
-                        <br>
-                    </p>
-                </div>
-                <div class="image-wrapper">
-                    <img src="portfolio.png">
-                </div>
-            </div>
-            <div class="footer">
-                <div class="container">
-                    <p>
-                        Made By &#169;Meech
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+        <h1>Login</h1>
+        <form action="idk.html" method="POST">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
 
-</body>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
 
-</html>
+            <input type="submit" value="Login">
+        </form>
