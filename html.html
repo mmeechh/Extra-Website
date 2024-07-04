@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Meech's Home</title>
+</head>
+<body>
+    
+<audio id="myAudio">
+    <source src="music.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+<div class="container" id="content">
+    <h1>mm</h1>
+    <p>HTML | CSS</p>
+    <img id="mainProfilePic" src="https://cdn.discordapp.com/attachments/1236629268482756629/1258372444616523806/IMG_5023.webp?ex=6687ce2a&is=66867caa&hm=ec58736081a39c559bc97209aea31fa2baf14237ace5b8d2cff35db6f8068b5e&" alt="Discord Profile Picture">
+    <p>mmluvsher</p>
+    <div class="tabs">
+        <div class="tab active" onclick="showTabContent('home')">Home</div>
+        <div class="tab" onclick="showTabContent('about')">About</div>
+        <div class="tab" onclick="showTabContent('song')">Song</div>
+    </div>
+    <div id="home" class="tab-content active">
+        <h2>Home</h2>
+        <p>Hey there you can call me mm or meech</p>
+    </div>
+    <div id="about" class="tab-content">
+        <h2>About</h2>
+        <p>I code and I love music</p>
+    </div>
+    
+    <div id="song" class="tab-content">
+        <h2>Current Song</h2>
+        <p>Jaded - Drake</p>
+    </div>
+
+    <footer class="footer" id="page-footer">
+        &copy; 2024 Made By Meech
+    </footer>
+</div>
+
+<button onclick="startMusic()" class="button">Continue</button>
+
+<script>
+function startMusic() {
+    var audio = document.getElementById("myAudio");
+    audio.play();
+    document.getElementById("content").classList.add("show");
+    document.querySelector(".button").classList.add("hide");
+    createRain();
+}
+
+document.getElementById('mainProfilePic').addEventListener('click', function() {
+    var developerDetails = document.getElementById('developerDetails');
+    if (developerDetails.style.display === 'none' || developerDetails.style.display === '') {
+        developerDetails.style.display = 'block';
+    } else {
+        developerDetails.style.display = 'none';
+    }
+});
+
+function createRain() {
+    var amount = 100;
+    var body = document.querySelector('body');
+    for (var i = 0; i < amount; i++) {
+        var drop = document.createElement('div');
+        drop.className = 'rain';
+        drop.style.left = Math.random() * 100 + 'vw';
+        drop.style.animationDuration = 0.5 + Math.random() * 0.5 + 's';
+        body.appendChild(drop);
+    }
+}
+
+function showTabContent(tabId) {
+    var contents = document.querySelectorAll('.tab-content');
+    contents.forEach(function(content) {
+        content.classList.remove('active');
+    });
+    document.getElementById(tabId).classList.add('active');
+    
+    var tabs = document.querySelectorAll('.tab');
+    tabs.forEach(function(tab) {
+        tab.classList.remove('active');
+    });
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
