@@ -36,15 +36,13 @@
         <h2>Current Song</h2>
         <p>Jaded - Drake</p>
     </div>
+
+    <footer class="footer" id="page-footer">
+        &copy; 2024 Made By Meech
+    </footer>
 </div>
 
 <button onclick="startMusic()" class="button">Continue</button>
-
-<!-- Volume Control Slider -->
-<div class="volume-control">
-    <label for="volumeSlider">Volume:</label>
-    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5" oninput="setVolume(this.value)">
-</div>
 
 <script>
 function startMusic() {
@@ -88,11 +86,6 @@ function showTabContent(tabId) {
         tab.classList.remove('active');
     });
     event.target.classList.add('active');
-}
-
-function setVolume(value) {
-    var audio = document.getElementById("myAudio");
-    audio.volume = value;
 }
 </script>
 </body>
