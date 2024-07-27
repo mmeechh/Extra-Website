@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background: black;
@@ -13,6 +15,25 @@ body {
     background-size: cover;
 }
 
+/* Styles for background video */
+    .background-video {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     z-index: -1; /* Ensure the video is behind other content */
+     opacity: 0.7; /* Optional: to make the video less prominent */
+}
+
+/* Styles for content */
+    .container {
+    position: relative;
+    z-index: 1; /* Ensure content is above the video */
+    color: white; /* Optional: for better visibility over video */
+}
+
 .container {
     position: absolute;
     top: 50%;
@@ -22,6 +43,7 @@ body {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     border: 2px solid #ffffff;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     filter: blur(5px);
@@ -133,9 +155,108 @@ p {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+.volume-control {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.7); /* Slightly translucent background for visibility */
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+}
+
+.volume-control label {
+    font-size: 1.1em;
+    margin-right: 5px;
+    color: #fff;
+}
+
+/* Custom Volume Slider Styles */
+#volume-slider {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 5px;
+    background: #666;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff; /* Blue color for the thumb */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#volume-slider::-webkit-slider-thumb:hover {
+    background: #ffffff; /* Slightly darker blue when hovered */
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#volume-slider::-moz-range-thumb:hover {
+    background: #ffffff;
+}
+
+#volume-slider::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#volume-slider::-ms-thumb:hover {
+    background: #ffffff;
+}
+
+.viewer-count {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    font-size: 14px;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.discord-presence {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    font-size: 14px;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
 .rain {
     position: absolute;
-    width: 3px;
+    width: 6px;
     height: 60px;
     background: rgba(255, 255, 255, 0.2);
     bottom: 100%;
@@ -143,12 +264,24 @@ p {
     z-index: 0;
 }
 
-.footer {
-    font-weight: 700;
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    10%, 30%, 50%, 70%, 90% { transform: translate(-3px, 0); } /* Adjust the translate values to reduce the shake distance */
+    20%, 40%, 60%, 80%, 100% { transform: translate(3px, 0); } /* Adjust the translate values to reduce the shake distance */
 }
+
+.shake {
+    animation: shake 1.5s ease-in-out infinite; /* Increase the animation duration to slow down the shake */
+}
+
+
 
 @keyframes fall {
     to {
         transform: translateY(100vh);
     }
+}
+
+.footer {
+    font-weight: 700;
 }
